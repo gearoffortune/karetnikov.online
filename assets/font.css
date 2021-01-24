@@ -1,0 +1,99 @@
+
+@font-face {
+  font-family: "Comfortaa";
+  src: url('/assets/Comfortaa/font.woff2') format('woff2');
+}
+
+
+/*testing variable font*/
+:root {
+  --comfortaa-regular-aalt: "aalt" off;
+  --comfortaa-regular-dnom: "dnom" off;
+  --comfortaa-regular-frac: "frac" off;
+  --comfortaa-regular-numr: "numr" off;
+  --comfortaa-regular-ordn: "ordn" off;
+  --comfortaa-regular-salt: "salt" off;
+  --comfortaa-regular-ss01: "ss01" off;
+  --comfortaa-regular-sups: "sups" off;
+}
+
+/* If class is applied, update custom property and
+ apply modern font-variant-* when supported */
+.comfortaa-regular-aalt {
+  --comfortaa-regular-aalt: "aalt" on;
+}
+
+.comfortaa-regular-dnom {
+  --comfortaa-regular-dnom: "dnom" on;
+}
+
+.comfortaa-regular-frac {
+  --comfortaa-regular-frac: "frac" on;
+}
+
+@supports (font-variant-numeric: diagonal-fractions) {
+  .comfortaa-regular-frac {
+      --comfortaa-regular-frac: "____";
+      font-variant-numeric: diagonal-fractions;
+  }
+}
+
+.comfortaa-regular-numr {
+  --comfortaa-regular-numr: "numr" on;
+}
+
+.comfortaa-regular-ordn {
+  --comfortaa-regular-ordn: "ordn" on;
+}
+
+@supports (font-variant-numeric: ordinal) {
+  .comfortaa-regular-ordn {
+      --comfortaa-regular-ordn: "____";
+      font-variant-numeric: ordinal;
+  }
+}
+
+.comfortaa-regular-salt {
+  --comfortaa-regular-salt: "salt" on;
+}
+
+.comfortaa-regular-ss01 {
+  --comfortaa-regular-ss01: "ss01" on;
+}
+
+.comfortaa-regular-sups {
+  --comfortaa-regular-sups: "sups" on;
+}
+
+@supports (font-variant-position: super) {
+  .comfortaa-regular-sups {
+      --comfortaa-regular-sups: "____";
+      font-variant-position: super;
+  }
+}
+
+/* Apply current state of all custom properties
+ whenever a class is being applied */
+.comfortaa-regular-aalt,
+.comfortaa-regular-dnom,
+.comfortaa-regular-frac,
+.comfortaa-regular-numr,
+.comfortaa-regular-ordn,
+.comfortaa-regular-salt,
+.comfortaa-regular-ss01,
+.comfortaa-regular-sups {
+  font-feature-settings: var(--comfortaa-regular-aalt), var(--comfortaa-regular-dnom), var(--comfortaa-regular-frac), var(--comfortaa-regular-numr), var(--comfortaa-regular-ordn), var(--comfortaa-regular-salt), var(--comfortaa-regular-ss01), var(--comfortaa-regular-sups);
+}
+
+/* Variable instances */
+.comfortaa-regular-light {
+  font-variation-settings: "wght" 300;
+}
+
+.comfortaa-regular-regular {
+  font-variation-settings: "wght" 400;
+}
+
+.comfortaa-regular-bold {
+  font-variation-settings: "wght" 700;
+}
